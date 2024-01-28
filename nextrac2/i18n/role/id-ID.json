@@ -1,0 +1,8 @@
+{
+  "SUCCESS_ROLE_MESSAGE": "Role baru berhasil ditambahkan",
+  "SUCCESS_DELETE_ROLE_MESSAGE" : "Penghapusan satu role berhasil dilakukan",
+  "SUCCESS_INITIATE_GET_LIST_ROLE_MESSAGE": "Inisialisasi role berhasil dilakukan",
+  "SUCCESS_GET_LIST_ROLE_MESSAGE": "Pengambilan daftar role berhasil dilakukan",
+  "SUCCESS_VIEW_ROLE_MESSAGE": "Pengambilan detail role berhasil dilakukan",
+  "SUCCESS_UPDATE_ROLE_MESSAGE": "Role berhasil di ubah"
+}

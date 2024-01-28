@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Sukses menambahkan customer baru",
+  "SUCCESS_GET_LIST_CUSTOMER_MESSAGE": "Pengambilan daftar customer berhasil dilakukan",
+  "SUCCESS_VIEW_CUSTOMER_MESSAGE": "Pengambilan detail customer berhasil dilakukan",
+  "FAILED_INSERT_CUSTOMER_MESSAGE": "Data gagal ter input di database",
+  "COUNT_IS_NOT_ZERO_MESSAGE": "Sequence gagal ter reset",
+  "SUCCESS_INITIATE_GET_LIST_CUSTOMER_MESSAGE": "Inisialisasi customer berhasil dilakukan"
+}

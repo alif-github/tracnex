@@ -1,0 +1,32 @@
+-- +migrate Up
+-- +migrate StatementBegin
+
+ALTER TABLE history_alert
+    ADD COLUMN last_sent_notification TIMESTAMP WITHOUT TIME ZONE;
+
+ALTER TABLE account_registration
+    ALTER COLUMN address TYPE VARCHAR(100),
+	ALTER COLUMN contact_first_name TYPE VARCHAR(20);
+
+CREATE SEQUENCE IF NOT EXISTS mapping_acc_reg_customer_pkey_seq;
+CREATE TABLE IF NOT EXISTS "mapping_acc_reg_customer"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('mapping_acc_reg_customer_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    account_registration_id     BIGINT,
+    customer_id                 BIGINT,
+    last_customer_name          VARCHAR(50),
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_mapping_acc_reg_customer_id PRIMARY KEY (id),
+    CONSTRAINT fk_mappingaccregcustomer_accregistration_accountregistrationid FOREIGN KEY (account_registration_id) REFERENCES account_registration(id),
+    CONSTRAINT fk_mappingaccregcustomer_customer_customerid FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+-- +migrate StatementEnd

@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_LICENSE_VARIANT_MESSAGE": "Successfully added new license variant",
+  "SUCCESS_GET_LIST_LICENSE_VARIANT_MESSAGE": "Successfully get list data license variant",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_VARIANT_MESSAGE": "Successfully get initiate data license variant",
+  "SUCCESS_UPDATE_LICENSE_VARIANT_MESSAGE": "Successfully update data license variant",
+  "SUCCESS_VIEW_LICENSE_VARIANT_MESSAGE": "Successfully get detail data license variant",
+  "SUCCESS_DELETE_LICENSE_VARIANT_MESSAGE": "Successfully deleting data license variant"
+}

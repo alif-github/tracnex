@@ -1,0 +1,49 @@
+package repository
+
+import "database/sql"
+
+type BacklogModel struct {
+	ID              sql.NullInt64
+	Feature         sql.NullInt64
+	ReferenceTicket sql.NullInt64
+	Sprint          sql.NullString
+	Subject         sql.NullString
+	Description     sql.NullString
+	Tracker         sql.NullString
+	SprintName      sql.NullString
+	Layer1          sql.NullString
+	Layer2          sql.NullString
+	Layer3          sql.NullString
+	Layer4          sql.NullString
+	Layer5          sql.NullString
+	RedmineNumber   sql.NullInt64
+	EmployeeId      sql.NullInt64
+	EmployeeName    sql.NullString
+	Status          sql.NullString
+	EstimateTime    sql.NullFloat64
+	Mandays         sql.NullFloat64
+	FlowChanged     sql.NullString
+	AdditionalData  sql.NullString
+	Note            sql.NullString
+	TotalMandays    sql.NullFloat64
+	PaymentStatus   sql.NullBool
+	Page            sql.NullString
+	Url             sql.NullString
+	DepartmentId    sql.NullInt64
+	DepartmentName  sql.NullString
+	FileUploadId    sql.NullInt64
+	UUIDKey         sql.NullString
+	CreatedBy       sql.NullInt64
+	CreatedAt       sql.NullTime
+	CreatedClient   sql.NullString
+	CreatedName     sql.NullString
+	UpdatedBy       sql.NullInt64
+	UpdatedAt       sql.NullTime
+	UpdatedAtOnDB   sql.NullTime
+	UpdatedClient   sql.NullString
+	UpdatedName     sql.NullString
+	Deleted         sql.NullBool
+	FileUploadData  FileUpload
+	DepartmentCode  sql.NullString
+	Active          sql.NullBool
+}

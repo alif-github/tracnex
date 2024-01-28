@@ -1,0 +1,40 @@
+FROM docker.nexcloud.id/golang:1.15-nexcommon-staging
+COPY . /go/src/nexsoft.co.id/nextrac2/
+RUN go version
+WORKDIR /go/src/nexsoft.co.id/
+RUN go get -d -v ./nextrac2/...
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-s' -o /home/nextrac2 /go/src/nexsoft.co.id/nextrac2/main.go
+
+FROM alpine
+RUN apk add curl
+RUN apk add tz
+
+ENV TZ="Asia/Jakarta"
+
+RUN mkdir -p /home/config
+RUN mkdir -p /home/apptrac/go/nextrac/i18n
+RUN mkdir -p /home/apptrac/go/nextrac/logs
+RUN mkdir -p /home/sql_migrations
+RUN mkdir -p /home/v1
+RUN mkdir -p /home/apptrac/go/nextrac/data
+RUN mkdir -p /home/data
+RUN mkdir -p /home/apptrac/go/nextrac/cdn/nextrac
+
+WORKDIR /home
+COPY --from=0 /home/nextrac2 ./
+COPY --from=0 /go/src/nexsoft.co.id/nextrac2/i18n /home/apptrac/go/nextrac/i18n
+COPY --from=0 /go/src/nexsoft.co.id/nextrac2/config/* ./config/
+COPY --from=0 /go/src/nexsoft.co.id/nextrac2/sql_migrations/* ./sql_migrations/
+
+EXPOSE 9000
+
+# LOGGING
+RUN touch /home/apptrac/go/nextrac/logs/nextrac-stdout.log
+RUN ln -sf /proc/1/fd/1 /home/apptrac/go/nextrac/logs/nextrac-stdout.log
+
+# PORTAINER
+LABEL com.centurylinklabs.watchtower.enable="true"
+LABEL io.portainer.accesscontrol.teams="nextrac"
+LABEL io.portainer.accesscontrol.users="tinus"
+HEALTHCHECK --interval=1m30s --timeout=30s --start-period=30s --retries=3 CMD [ "curl", "http://localhost:9000/v1/nextrac/health" ]
+EXPOSE 9000

@@ -1,0 +1,10 @@
+{
+  "SUCCESS_INSERT_LICENSE_CONFIG": "Successfully added new license config",
+  "SUCCESS_GET_LIST_LICENSE_CONFIG_MESSAGE": "Successfully get list data license config",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_CONFIG_MESSAGE": "Successfully get initiate data license config",
+  "SUCCESS_UPDATE_LICENSE_CONFIG_MESSAGE": "Successfully activating license config",
+  "SUCCESS_VIEW_LICENSE_CONFIG_MESSAGE": "Successfully get detail data license config",
+  "SUCCESS_DELETE_LICENSE_CONFIG_MESSAGE": "Successfully deleting data license config",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_JOURNAL_MESSAGE": "Successfully get initiate data license journal",
+  "SUCCESS_GET_LIST_LICENSE_JOURNAL_MESSAGE": "Successfully get list data license journal"
+}

@@ -1,0 +1,12 @@
+{
+  "SUCCESS_IMPORT_MESSAGE": "Successfully import file",
+  "FAILED_UNKNOWN_EXTENSION_MESSAGE": "unknown extension file",
+  "FAILED_FILE_REQUIRE_MESSAGE": "format file must text or csv",
+  "FAILED_CORRUPT_MESSAGE": "corrupt: size file is 0 kb",
+  "FAILED_UNKNOWN_TITLE_MESSAGE": "unknown document",
+  "FAILED_DATA_PROCESS_MESSAGE": "failed process data",
+  "SUCCESS_INITIATE_MESSAGE": "Success get initiate data import",
+  "SUCCESS_IMPORT_VALIDATE_MESSAGE": "Success import and validate file",
+  "FAILED_IMPORT_VALIDATE_MESSAGE": "Check your data, found some error",
+  "SUCCESS_CONFIRM_MESSAGE": "Success processing data import"
+}

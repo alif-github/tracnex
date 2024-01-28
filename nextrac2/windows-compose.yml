@@ -1,0 +1,71 @@
+version: "3.7"
+services:
+  app:
+    extra_hosts:
+      - db:10.10.9.14
+      - redis:10.10.9.15
+    container_name: staging-trac
+    hostname: nextrac
+    build: .
+    command: >
+      sh -c "umask 0002
+      && /home/nextrac2 staging >> /home/apptrac/go/nextrac/logs/nextrac-stdout.log 2>&1"
+    network_mode: bridge
+    ports:
+      - "9014:9000"
+    environment:
+      - nextrac2CoreConfig=/home/config
+      - NEXTRAC2_HOST=0.0.0.0
+      - NEXTRAC2_PORT=9000
+      - NEXTRAC2_RESOURCE_ID=trac
+      - NEXTRAC2_DB_CONNECTION=user=nextrac password=Nextrac@7 dbname=nextrac sslmode=disable host=db port=5432
+      - NEXTRAC2_DB_PARAM=nextrac_migrate
+      - NEXTRAC2_DB_CONNECTION_VIEW=user=development password=development@777 dbname=stagetrac sslmode=disable host=db port=5432
+      - NEXTRAC2_DB_PARAM_VIEW=nextrac_migrate
+      - NEXTRAC2_CLIENT_SECRET=9b4969403e984f9eacde8ad705d3137c
+      - NEXTRAC2_SIGNATURE_KEY=a478e88cab8f48cdaf58dce65a4df68d
+      - NEXTRAC2_REDIS_HOST=redis
+      - NEXTRAC2_REDIS_PORT=6379
+      - NEXTRAC2_REDIS_DB=12
+      - NEXTRAC2_REDIS_PASSWORD=
+      - NEXTRAC2_JWT_KEY=wLQ8VSLvdhOFPVavdvYocmHrYO0AXt3D
+      - NEXTRAC2_INTERNAL_KEY=wLQ8VSLvdhOFPVavdvYocmHrYO0AXt3D
+      - NEXTRAC2_ENCRYPT_KEY=958b193af3564098af2c163891f1f27e
+      - AZURE_ACCOUNT_NAME=nextest
+      - AZURE_ACCOUNT_KEY=2ltj8uR1Xu1nEwf2YNbN7lIsYrsIYCOcaWQjST2lTS+FQCLEUqwejdQt7gM2wCTqwhcTTx9IeLaI+AStKPmm6Q==
+    # volumes:
+    #    - type: bind
+    #      source: /home/volume/data/nextrac2/staging
+    #      target: /home/apptrac/go/nextrac/data
+    #    - type: bind
+    #      source: /etc/localtime
+    #      target: /etc/localtime
+    #    - type: bind
+    #      source: /etc/timezone
+    #      target: /etc/timezone
+    #    - type: volume
+    #      source: cdnstagetrac
+    #      target: /home/apptrac/go/nextrac/cdn
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 5m
+      resources:
+        limits:
+          cpus: "1"
+          memory: "2048M"
+        reservations:
+          cpus: "100m"
+          memory: "512M"
+# volumes:
+#   cdnstagetrac:
+#     driver: local
+#     driver_opts:
+#       type: "nfs4"
+#       o: "addr=10.10.111.198,nolock,soft,rw"
+#       device: ":/home/nfsshare/www/nexcare"
+

@@ -1,0 +1,5 @@
+{
+  "SUCCESS_LIST_JOB_PROCESS_MESSAGE": "Success get list job process",
+  "SUCCESS_INITIATE_JOB_PROCESS_MESSAGE": "Success initiate job process",
+  "SUCCESS_VIEW_JOB_PROCESS_MESSAGE": "Success get detail job process"
+}

@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_SALESMAN_MESSAGE": "Successfully insert new data salesman",
+  "SUCCESS_GET_LIST_SALESMAN_MESSAGE": "Successfully get list data salesman",
+  "SUCCESS_INITIATE_GET_LIST_SALESMAN_MESSAGE": "Successfully get initiate data salesman",
+  "SUCCESS_DELETE_SALESMAN_MESSAGE": "Successfully deleting salesman",
+  "SUCCESS_VIEW_SALESMAN_MESSAGE": "Successfully get detail salesman",
+  "SUCCESS_UPDATE_SALESMAN_MESSAGE": "Successfully update salesman"
+}

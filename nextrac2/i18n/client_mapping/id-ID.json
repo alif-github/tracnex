@@ -1,0 +1,11 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Pendaftaran branch sukses",
+  "SUCCESS_GET_LIST_MESSAGE" : "Seluruh data Client mapping berhasil didapatkan",
+  "INITIATE_GET_LIST_CLIENT_MAPPING_MESSAGE" : "Pengambilan data inisiasi daftar Client Mapping berhasil dilakukan",
+  "SUCCESS_UPDATE_MESSAGE": "Sukses memperbarui client",
+  "SUCCESS_UPDATE_SOCKET_ID_ND6_MESSAGE": "Perubahan user socket ID sukses",
+  "DETAIL_ERROR_DATA_HAS_BEEN_REGISTERED": "Company dan branch sudah terdaftar",
+  "DETAIL_INVALID_BRANCH_COMPANY_MESSAGE": "Company atau branch ID tidak valid",
+  "SUCCESS_VIEW_CLIENT_MAPPING_MESSAGE" : "Detail data client mapping berhasil didapatkan",
+  "DETAIL_INVALID_CLIENTTYPE_MESSAGE": "Tipe client tidak sesuai"
+}

@@ -1,0 +1,8 @@
+{
+  "SUCCESS_GET_ITEM_MESSAGE": "Successfully get list of menu item",
+  "SUCCESS_GET_SERVICE_MESSAGE": "Successfully get list of service menu",
+  "SUCCESS_GET_PARENT_MESSAGE": "Successfully get list of parent menu",
+  "SUCCESS_UPDATE_PARENT_MESSAGE": "Successfully update data menu parent",
+  "SUCCESS_UPDATE_SERVICE_MESSAGE": "Successfully update data menu service",
+  "SUCCESS_UPDATE_ITEM_MESSAGE": "Successfully update data menu item"
+}

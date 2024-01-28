@@ -1,0 +1,13 @@
+{
+  "SUCCESS_PKCE_REGIS_MESSAGE": "Registration is successful, please check email {{.EMAIL}} for activation",
+  "DETAIL_ERROR_INVALID_ID_MESSAGE": "Invalid company or branch ID",
+  "DETAIL_ERROR_INVALID_CLIENTTYPE_MESSAGE": "Client type does not match",
+  "DETAIL_ERROR_INVALID_USERNAME_MESSAGE": "Username has been used",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXTRAC_MESSAGE": "Failed adding access resource Nextrac",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXCLOUD_MESSAGE": "Failed adding access resource NexCloud API v2",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXDRIVE_MESSAGE": "Failed adding access resource Nexdrive",
+  "SUCCESS_PKCE_UNREGIS_MESSAGE": "Success unregister user",
+  "DETAIL_NOT_FOUND_USERNAME_MESSAGE": "Username not found",
+  "SUCCESS_VIEW_CUSTOM_PKCE_UNREGIS_MESSAGE": "Success view user",
+  "SUCCESS_CHANGE_PASSWORD_MESSAGE": "Success change password"
+}

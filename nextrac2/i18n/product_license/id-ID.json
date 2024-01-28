@@ -1,0 +1,6 @@
+{
+  "SUCCESS_GET_LIST_PRODUCT_LICENSE_MESSAGE": "Sukses mendapatkan list data lisensi produk",
+  "SUCCESS_INITIATE_GET_LIST_PRODUCT_LICENSE_MESSAGE": "Sukses mendapatkan inisialisasi data lisensi produk",
+  "SUCCESS_VIEW_PRODUCT_LICENSE_MESSAGE": "Sukses mendapatkan detail lisensi produk",
+  "SUCCESS_UPDATE_PRODUCT_LICENSE_MESSAGE": "Sukses memperbaharui lisensi produk"
+}

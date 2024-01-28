@@ -1,0 +1,10 @@
+{
+  "AUTHORIZE_MESSAGE": "Berhasil diauthentikasi",
+  "LOGOUT_MESSAGE": "Berhasil Logout",
+  "VERIFY_MESSAGE": "Berhasil diverifikasi",
+  "TOKEN_MESSAGE": "Pengambilan token berhasil dilakukan",
+  "REFRESH_MESSAGE": "Penyegaran token berhasil dilakukan",
+  "GET_SESSION_MESSAGE": "Pengambilan data session user berhasil dilakukan",
+  "GET_CURRENT_DATETIME_MESSAGE": "Pengambilan tanggal dan waktu terbaru berhasil dilakukan",
+  "GET_VERSION_MESSAGE": "Pengambilan data versi aplikasi berhasil dilakukan"
+}

@@ -1,0 +1,7 @@
+{
+  "SUCCESS_ADD_RESOURCE_NEXCLOUD_MESSAGE": "Penambahan hak akses NexCloud API v2 sukses",
+  "SUCCESS_ADD_RESOURCE_NEXDRIVE_MESSAGE": "Penambahan hak akses NexDrive sukses",
+  "INVALID_CLIENT_CREDENTIAL_ERROR": "Client credential tidak valid",
+  "FAILED_ADD_RESOURCE_EXISTING": "Permintaan hak akses sudah terdaftar",
+  "SUCCESS_VIEW_LOG_MESSAGE": "Sukses menampilkan log pendaftaran"
+}

@@ -1,0 +1,7 @@
+{
+  "SUCCESS_GET_LIST_USER_LICENSE_MESSAGE": "Successfully get list data user license",
+  "SUCCESS_INITIATE_GET_LIST_USER_LICENSE_MESSAGE": "Successfully get initiate data user license",
+  "SUCCESS_VIEW_USER_LICENSE_MESSAGE": "Successfully get detail user license",
+  "SUCCESS_INITIATE_VIEW_USER_LICENSE_MESSAGE": "Successfully get initiate view data user license",
+  "SUCCESS_TRANSFER_LICENSE": "Transfer process is successful"
+}

@@ -1,0 +1,7 @@
+{
+  "SUCCESS_GET_LIST_USER_LICENSE_MESSAGE": "Sukses mendapatkan list data lisensi user",
+  "SUCCESS_INITIATE_GET_LIST_USER_LICENSE_MESSAGE": "Sukses mendapatkan inisialisasi data lisensi user",
+  "SUCCESS_VIEW_USER_LICENSE_MESSAGE": "Sukses mendapatkan detail lisensi user",
+  "SUCCESS_INITIATE_VIEW_USER_LICENSE_MESSAGE": "Sukses mendapatkan inisialisasi view data lisensi user",
+  "SUCCESS_TRANSFER_LICENSE": "Proses transfer berhasil dilakukan"
+}

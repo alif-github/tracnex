@@ -1,0 +1,193 @@
+== Purpose ==
+The purpose of this service is to define a uniform way of passing messages within the platform. The message format should be independent of transport mechanism or application. All application specific header and data are isolated in fields like ''Custom'' and ''Data''. The message format is intended to be a means to pass information from one service to another with a uniform header processing.
+
+== Overview ==
+
+== Message Format ==
+M - Mandatory
+O - Optional
+C - conditional
+
+{
+    "nexsoft.message" :
+    {
+       "header"   :
+       {
+           "message_id"    : "78FG6F67SDF67",                   -- M - Unique request id
+           "user_id"       : "user_name",                       -- M - this is receiver's assigned and used for auth
+           "password"      : "top secret"                       -- M - used for auth
+           "client_id"     : "Univenus",                        -- M - client id of the sender
+           "timestamp"     : "2019-12-24T12:05:23.23094578Z",   -- M - RFC 3339, based on ISO 8601
+           "source"        :                                    -- O - information about sender
+           {
+               "code"      : "ND6_S8976",                       -- C - allocated code or id known to receiver
+               "server_id" : "a4:83:e7:39:55:e5",               -- O - server id. could be mac_id or any other agreed and unique id
+               "custom":                                        -- O - used for any additional information. the standard header
+                                                                    -- processing will save and pass this along but ignore the conents
+                                                                    -- and will not do any processing or validation on any of the custom
+                                                                    -- blocks
+               [
+                   {"key" : "key1", "value" : "value1"},
+                   {"key" : "key2", "value" : "value2"},
+                   ....
+               ]
+           },
+           "message" :                                          -- M - this is the message type
+           {
+               "class" : "Promotion",                           -- O - this is the major grouping of the message. eg Promotion
+               "type"  : "MSG_PROM_RULE_87"                     -- M - this is the type within the group. eg 'Promotion Rule' if
+               "custom":                                        -- O - see definition of custom above
+               [                                                -- 
+                   {"key" : "key1", "value" : "value1"},        -- 
+                   {"key" : "key2", "value" : "value2"},        -- 
+                   ....
+               ]
+           },
+           "action"    :                                        -- M - the name or id of the action or processing being requested
+           {                                                    -- 
+               "class" : "Journal",                             -- O - eg journal
+               "type"  : "Insert",                              -- M - eg update journal
+               "custom":                                        -- 
+               [                                                -- 
+                   {"key" : "key1", "value" : "value1"},        -- 
+                   {"key" : "key2", "value" : "value2"},        -- 
+                   ....
+               ]
+           }
+           "destination" :                                      -- O - what is the destination if this is a transfer 
+           {                                                    -- 
+               "type"      : "Group",                           -- 
+               "group"     : "JAWA",                            -- C - Mandatory if the block is present 
+               "list"      :                                    -- O
+               [                                                -- O - NOT supported for phase 1
+                   {"code"  : "UNI_ND6_J1"},                    -- O - NOT supported for phase 1
+                   {"code"  : "UNI_ND6_J2"},                    -- O - NOT supported for phase 1
+                   {"code"  : "UNI_ND6_J3"}                     -- O - NOT supported for phase 1
+               ]
+               "custom":
+               [
+                   {"key" : "key1", "value" : "value1"},
+                   {"key" : "key2", "value" : "value2"},
+                   ....
+               ]
+           },
+           "custom":
+           [
+               {"key" : "key1", "value" : "value1"},
+               {"key" : "key2", "value" : "value2"},
+               ....
+           ]       
+       }
+   }
+   "payload" :                                                  -- O - the message usualle has a payload but not mandatory
+                                                                    -- the payload is mostly upto the application to 
+                                                                    -- validate and not the common message processing
+   {                                                            -- C -if the payload block is present then it should have a header
+       "header"  :                                              --
+       {                                                        --
+           "meta_data" :                                        -- O - mostly upto the specific app to validate or enforce.
+           {                                                    -- O - mostly upto the specific app to validate or enforce.
+               "data_chksum"           : "78FGS9F79SDFG76SD",   -- O - mostly upto the specific app to validate or enforce.
+               "chksum_type"           : "md5",                 -- O - mostly upto the specific app to validate or enforce.
+               "size"                  : 95346,                 -- O - mostly upto the specific app to validate or enforce.
+               "range" :                                        -- O - mostly upto the specific app to validate or enforce.
+               {                                                -- O - mostly upto the specific app to validate or enforce.
+                   "from"  : 10000,                             -- O - mostly upto the specific app to validate or enforce.
+                   "to"    : 19999                              -- O - mostly upto the specific app to validate or enforce.
+               }
+               "custom":
+               [
+                   {"key" : "key1", "value" : "value1"},
+                   {"key" : "key2", "value" : "value2"},
+                   ....
+               ]
+           },
+           "custom"    :
+           [
+               {"key": "k1", "value":"v1"},
+               {"key": "k1", "value":"v1"}
+           ]
+       }
+       "data"  : 
+       {
+           "uuid"          : "78FG6F67SDF67",                   -- C - Unique message id
+       }                                             -- O - mostly upto the specific app to validate or enforce. 
+   }
+}
+
+
+
+Notification message to api destinations
+{
+    "nexsoft.message" :
+    {
+       "header"   :
+       {
+           "message_id"          : "78FG6F67SDF67",                   -- O - Unique message id
+           "user_id"       : "user_name",                       -- M - this is receiver's assigned and used for auth
+           "password"      : "top secret"                       -- M - used for auth
+           "client_id"     : "Univenus",                        -- M - client id of the sender
+           "timestamp"     : "2019-12-24T12:05:23.23094578Z",   -- M - RFC 3339, based on ISO 8601
+           "source"        :                                    -- O - information about sender
+           {
+               "code"               : "api_server",             -- M - allocated code or id known to receiver
+               "server_id"  : "a4:83:e7:39:55:e5"       -- O - server id. could be mac_id or any other agreed and unique id
+           },
+           "message" :                                          -- M - this is the message type
+           {
+               "class" : "Notification",                        -- O - this is the major grouping of the message. eg Promotion
+               "type"  : "Data-A_ready"                         -- M - this is the type within the group. eg 'Promotion Rule' if
+           },
+           "action"    :                                        -- M - the name or id of the action or processing being requested
+           {                                                    -- 
+               "class" : "Data_feed",                           -- O - eg journal
+               "type"  : "Download"                             -- M - eg update journal
+           }
+       }
+   }
+}
+
+
+list of all available data for download for univenus
+
+
+Error message 
+{
+    "nexsoft.message" :
+    {
+       "header"   :
+       {
+           "message_id"    : "78FG6F67SDF67",                   -- O - Unique message id
+           "user_id"       : "user_name",                       -- M - this is receiver's assigned and used for auth
+           "password"      : "top secret"                       -- M - used for auth
+           "client_id"     : "Univenus",                        -- M - client id of the sender
+           "timestamp"     : "2019-12-24T12:05:23.23094578Z",   -- M - RFC 3339, based on ISO 8601
+           "source"        :                                    -- O - information about sender
+           {
+               "code"          : "api_server",                  -- M - allocated code or id known to receiver
+               "server_id"     : "a4:83:e7:39:55:e5"            -- O - server id. could be mac_id or any other agreed and unique id
+           },
+           "message" :                                          -- M - this is the message type
+           {
+               "class" : "Notification",                        -- O - this is the major grouping of the message. eg Promotion
+               "type"  : "Specific_Error"                       -- M - this is the type within the group. eg 'Promotion Rule' if
+           },
+           "action"    :                                        -- M - the name or id of the action or processing being requested
+           {                                                    -- 
+               "class" : "Data_feed",                           -- O - eg journal
+               "type"  : "Download"                             -- M - eg update journal
+           }
+       }
+   }
+   "payload" :
+   {
+        "data" :
+        {
+            "reference_id"      : "78FG6F67SDF67",              -- O - 
+            "uuid"              : "987GS6RE9G78SER69G97WE798",  -- O - 
+            "error_code"        : "E_API_DB_045",               -- O - where possible, this should be provided
+            "error_message"     : "Unable to identify the ..."  -- M - detailed user friendly error message 
+            "additional_info:   : ""                            -- O - any additional information and details
+        }
+   }
+}

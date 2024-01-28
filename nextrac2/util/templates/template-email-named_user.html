@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+{{define "id-ID"}}
+<html xml:lang="en">
+<head>
+  <title>Pengingat dari Nextrac</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    table,
+    td,
+    div,
+    h1,
+    p {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0">
+<table role="presentation" style="
+        width: 100%;
+        border-collapse: collapse;
+        border: 0;
+        border-spacing: 0;
+        background: #ffffff;
+      ">
+  <tr>
+    <td align="center" style="padding: 0">
+      <table role="presentation" style="
+              width: 100%;
+              border-collapse: collapse;
+              border-spacing: 0;
+              text-align: left;
+            ">
+        <tr>
+          <td style="padding: 36px 30px 24px 30px">
+            <table role="presentation" style="
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: 0;
+                    border-spacing: 0;
+                  ">
+              <tr>
+                <td style="padding: 0 0 8px 0; color: #153643">
+                  <h1 style="
+                          font-size: 16px;
+                          margin: 0 0 20px 0;
+                          font-family: Arial, sans-serif;
+                        "> Dear {{.Name}}, </h1>
+                  <p style="
+                          margin: 0 0 12px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> Proses registrasi{{.Purpose}}Anda pada sistem {{.ClientType}} telah berhasil, dengan detail sebagai berikut: : </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 32px 0">
+                  <table role="presentation" style="
+                          width: 100%;
+                          border-collapse: collapse;
+                          border: 0;
+                          border-spacing: 0;
+                        ">
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td style="width: 160px">
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> CompanyID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UniqueID1}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td style="width: 160px">
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Nama Company </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.CompanyName}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> BranchID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UniqueID2}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Nama Branch </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.BranchName}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> SalesmanID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.SalesmanID}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> UserID/Nama Panggilan </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UserID}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Password/Kata Sandi </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.Password}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> OTP/Kode Aktivasi </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.OTP}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Email </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.Email}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Registrasi ID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.AuthUserID}}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 8px 0">
+                  <p style="
+                          margin: 0 0 12px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> Untuk menyelesaikan proses registrasi Anda, perlu dilakukan aktivasi email, silahkan akses link berikut untuk melakukan aktivasi. </p>
+                  <a style="font-style: italic" href="{{.Link}}">{{.Link}}</a>
+                  <p style="
+                          margin: 10px 0 0px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> Atas perhatiannya, kami ucapkan terima kasih. </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 16px 0">
+                  <br />
+                  <br />
+                  <p style="
+                          margin: 0 0 6px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                          font-style: italic;
+                        "> Hormat kami, </p>
+                  <p style="
+                          margin: 0 0 0px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                          font-style: italic;
+                        "> Nexsoft System </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table role="presentation" style="
+        width: 100%;
+        border-collapse: collapse;
+        border: 0;
+        border-spacing: 0;
+        background: #ffffff;
+      ">
+  <tr>
+    <td align="center" style="padding: 0">
+      <table role="presentation" style="
+              width: 100%;
+              border-collapse: collapse;
+              border-spacing: 0;
+              text-align: left;
+            ">
+        <tr>
+          <td style="padding: 36px 30px 24px 30px">
+            <table role="presentation" style="
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: 0;
+                    border-spacing: 0;
+                  ">
+              <tr>
+                <td>
+                  <h3>- - - - -</h3>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table role="presentation" style="
+        width: 100%;
+        border-collapse: collapse;
+        border: 0;
+        border-spacing: 0;
+        background: #ffffff;
+      ">
+  <tr>
+    <td align="center" style="padding: 0">
+      <table role="presentation" style="
+              width: 100%;
+              border-collapse: collapse;
+              border-spacing: 0;
+              text-align: left;
+            ">
+        <tr>
+          <td style="padding: 36px 30px 24px 30px">
+            <table role="presentation" style="
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: 0;
+                    border-spacing: 0;
+                  ">
+              <tr>
+                <td style="padding: 0 0 8px 0; color: #153643">
+                  <h1 style="
+                          font-size: 16px;
+                          margin: 0 0 20px 0;
+                          font-family: Arial, sans-serif;
+                        "> Dear {{.Name}}, </h1>
+                  <p style="
+                          margin: 0 0 12px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> Your registration process{{.Purpose}}in {{.ClientType}} system has been success, with detail below: </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 32px 0">
+                  <table role="presentation" style="
+                          width: 100%;
+                          border-collapse: collapse;
+                          border: 0;
+                          border-spacing: 0;
+                        ">
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td style="width: 160px">
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> CompanyID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UniqueID1}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td style="width: 160px">
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Company Name </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.CompanyName}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> BranchID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UniqueID2}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Branch Name </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.BranchName}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> SalesmanID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.SalesmanID}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> UserID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.UserID}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Password </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.Password}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> OTP/Verification Code </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.OTP}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Email </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.Email}}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr style="
+                            padding: 0;
+                            vertical-align: center;
+                            color: #153643;
+                          ">
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                              "> Registration ID </p>
+                      </td>
+                      <td style="width: 16px">:</td>
+                      <td>
+                        <p style="
+                                margin: 0px;
+                                font-size: 14px;
+                                line-height: 24px;
+                                font-family: Arial, sans-serif;
+                                font-weight: bold;
+                              ">
+                          {{.AuthUserID}}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 8px 0">
+                  <p style="
+                          margin: 0 0 12px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> To finish your registration process, you need to activate your email with accessing this link activation. </p>
+                  <a style="font-style: italic" href="{{.Link}}">{{.Link}}</a>
+                  <p style="
+                          margin: 10px 0 0px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                        "> Thank you for your attention. </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 16px 0">
+                  <br />
+                  <br />
+                  <p style="
+                          margin: 0 0 6px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                          font-style: italic;
+                        "> Regards, </p>
+                  <p style="
+                          margin: 0 0 0px 0;
+                          font-size: 14px;
+                          line-height: 24px;
+                          font-family: Arial, sans-serif;
+                          font-style: italic;
+                        "> Nexsoft System </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+{{end}}

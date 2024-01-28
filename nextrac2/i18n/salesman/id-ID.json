@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_SALESMAN_MESSAGE": "Data salesman berhasil ditambahkan",
+  "SUCCESS_GET_LIST_SALESMAN_MESSAGE": "Sukses mendapatkan list data salesman",
+  "SUCCESS_INITIATE_GET_LIST_SALESMAN_MESSAGE": "Sukses mendapatkan inisialisasi data salesman",
+  "SUCCESS_DELETE_SALESMAN_MESSAGE": "Sukses menghapus salesman",
+  "SUCCESS_VIEW_SALESMAN_MESSAGE": "Sukses mendapatkan detail salesman",
+  "SUCCESS_UPDATE_SALESMAN_MESSAGE": "Sukses memperbaharui salesman"
+}

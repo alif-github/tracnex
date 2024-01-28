@@ -1,0 +1,8 @@
+{
+  "SUCCESS_ROLE_MESSAGE": "Success adding new role",
+  "SUCCESS_DELETE_ROLE_MESSAGE": "Successfully delete one role",
+  "SUCCESS_INITIATE_GET_LIST_ROLE_MESSAGE": "Successfully initiate role",
+  "SUCCESS_GET_LIST_ROLE_MESSAGE": "Successfully get list of role",
+  "SUCCESS_VIEW_ROLE_MESSAGE": "Successfully get detail of role",
+  "SUCCESS_UPDATE_ROLE_MESSAGE": "Successfully update role"
+}

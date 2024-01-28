@@ -1,0 +1,296 @@
+{
+  "server": {
+    "protocol": "https",
+    "ethernet": "ens18",
+    "auto_add_host": true,
+    "auto_add_client": true,
+    "host": "$(NEXTRAC2_HOST)",
+    "port": "$(NEXTRAC2_PORT)",
+    "version": "2.0.0",
+    "resource_id": "$(NEXTRAC2_RESOURCE_ID)",
+    "prefix_path": "nextrac",
+    "log_level": "10"
+  },
+  "postgresql": {
+    "address": "$(NEXTRAC2_DB_CONNECTION)",
+    "default_schema": "$(NEXTRAC2_DB_PARAM)",
+    "max_open_connection": 500,
+    "max_idle_connection": 100
+  },
+  "postgresql_view": {
+    "address": "$(NEXTRAC2_DB_CONNECTION_VIEW)",
+    "default_schema": "$(NEXTRAC2_DB_PARAM_VIEW)",
+    "max_open_connection": 5,
+    "max_idle_connection": 2
+  },
+  "redis": {
+    "host": "$(NEXTRAC2_REDIS_HOST)",
+    "port": "$(NEXTRAC2_REDIS_PORT)",
+    "db": "$(NEXTRAC2_REDIS_DB)",
+    "password": "$(NEXTRAC2_REDIS_PASSWORD)",
+    "timeout": 10000,
+    "request_volume_threshold": 1000,
+    "sleep_window": 500,
+    "error_percent_threshold": 5,
+    "max_concurrent_requests": 10
+  },
+  "redis_session": {
+    "db": "$(NEXTRAC2_REDIS_DB)"
+  },
+  "client_credentials": {
+    "client_id": "52eb9f42fb104024bd5d0013f03ecca4",
+    "client_secret": "$(NEXTRAC2_CLIENT_SECRET)",
+    "secret_key": "$(NEXTRAC2_SIGNATURE_KEY)",
+    "auth_user_id": 351
+  },
+  "log_file": [
+    "/home/apptrac/go/nextrac/logs/nextrac.log",
+    "stdout"
+  ],
+  "jwt_key": {
+    "jwt": "$(NEXTRAC2_JWT_KEY)",
+    "internal": "$(NEXTRAC2_INTERNAL_KEY)"
+  },
+  "language_directory_path": "/home/apptrac/go/nextrac/i18n",
+  "nextrac_frontend": {
+    "host": "https://staging-trac.nexcloud.id",
+    "path_redirect": {
+      "reset_password_path": "/nextrac/reset/password",
+      "verify_user_path": "/nextrac/activation/user/verify",
+      "invitation": "/invitation",
+      "profile_completion": "/profile-completion"
+    }
+  },
+  "authentication_server": {
+    "host": "https://staging-oauth.nexcloud.id",
+    "path_redirect": {
+      "check_token": "/v1/roles/endpoints",
+      "authorize": "/v1/oauth/authorize",
+      "verify": "/v1/oauth/verify",
+      "token": "/v1/oauth/token",
+      "add_resource_client": "/v1/internal/admin/client/resource",
+      "check_user": "/v1/internal/clients/check",
+      "get_user": "/v1/internal/users/detail",
+      "logout": "/v1/oauth/logout",
+      "internal_user": {
+        "crud_user": "/v1/internal/users",
+        "check_user": "/v1/internal/users/detail",
+        "initiate": "/v1/internal/users/insert/initiate",
+        "change_password": "/v1/internal/users/password",
+        "forget": {
+          "phone": "/v1/internal/users/phone/forget",
+          "email": "/v1/internal/users/email/forget",
+          "change_password": {
+            "email": "/v1/internal/users/email/password"
+          }
+        },
+        "activation": {
+          "phone": "/v1/internal/users/phone/code",
+          "email": "/v1/internal/users/email/code"
+        },
+        "resend_activation": {
+          "phone": "/v1/internal/users/phone/code",
+          "email": "/v1/internal/users/email/code"
+        }
+      },
+      "internal_client": {
+        "crud_client": "/v1/internal/clients",
+        "add_resource_admin": "/v1/internal/clients/resource",
+        "check_client_user": "/v1/internal/clients/check"
+      }
+    }
+  },
+  "common_path": {
+    "resource_clients": "/v1/clients/resource",
+    "notify_deleted_token": "/v1/notify/token_deleted"
+  },
+  "audit": {
+    "is_active": true,
+    "list_secret_data": []
+  },
+  "alert_server": {
+    "host": "http://localhost:8000",
+    "path_redirect": {
+      "alert": "/v1/alert"
+    }
+  },
+  "azure": {
+    "account_name": "$(AZURE_ACCOUNT_NAME)",
+    "account_key": "$(AZURE_ACCOUNT_KEY)",
+    "host": "https://nextest.blob.core.windows.net",
+    "suffix": "/nextestdisk/nextrac/",
+    "is_active": false
+  },
+  "cdn": {
+    "host": "http://cdn17.nexcloud.id:7000",
+    "root_path": "/home/apptrac/go/nextrac/cdn",
+    "suffix": "/"
+  },
+  "elastic_search": {
+    "connection_str": "$(NEXTRAC2_ELASTIC_SEARCH)"
+  },
+  "nexcloud_api": {
+    "host": "https://staging-api.nexcloud.id",
+    "path_redirect": {
+      "add_resource_client": "/v1/internal/clients/resource/add",
+      "crud_client": "/v1/internal/clients/crud"
+    }
+  },
+  "nexdrive": {
+    "host": "https://staging-drive.nexcloud.id/",
+    "path_redirect": {
+      "add_resource_client": "/v1/clients/resource/add"
+    }
+  },
+  "grochat": {
+    "host": "https://staging-ngchat.gromart.club:7443",
+    "path_redirect": {
+      "send_message": "/tara/v3/message/resource/",
+      "authentication": "/tara/v3/auth/login/pwa/authentication",
+      "user_detail": "/tara/v3/auth/user/get",
+      "login": "/tara/v3/auth/login",
+      "sign_id": "/tara/v5/user/device",
+      "send_invitation": "/tara/v3/auth/registration/invitation",
+      "pwa_invitation": "/validate"
+    }
+  },
+  "grochat_ws": {
+    "host": "wss://staging-ngchat.gromart.club",
+    "path_redirect": {
+      "ws": "/v1/ws"
+    },
+    "user": {
+      "username": "csnexcare2",
+      "password" : "Test123!"
+    }
+  },
+  "nexmile": {
+    "host": "https://sandbox02.nexcloud.id",
+    "path_redirect": {
+      "activation_user": "/activation-user"
+    }
+  },
+  "nextrade": {
+    "host": "https://sandbox02.nexcloud.id",
+    "path_redirect": {
+      "activation_user": "/activation-user"
+    }
+  },
+  "nexstar": {
+    "host": "https://sandbox02.nexcloud.id",
+    "path_redirect": {
+      "activation_user": "/activation-user"
+    }
+  },
+  "data_directory": {
+    "base_directory_path": "/home/apptrac/go/nextrac/data",
+    "import_path": "/import",
+    "customer_path": "/customer_list",
+    "done_path": "/done",
+    "process_path": "/process",
+    "failed_path": "/failed",
+    "inbound_path": "/inbound",
+    "key_file": "tracfile",
+    "key_content": "content",
+    "template": "/template",
+    "backlog": "/backlog",
+    "report_leave_path": "/report_leave"
+  },
+  "scheduler": {
+    "is_active": true
+  },
+  "master_data": {
+    "host": "https://staging-master.nexcloud.id",
+    "path_redirect": {
+      "person_title": {
+        "get_list": "/v1/masterdata/internal/persontitle/list",
+        "view": "/v1/masterdata/internal/persontitle"
+      },
+      "province": {
+        "get_list": "/v1/masterdata/internal/province/list",
+        "view": "/v1/masterdata/internal/province"
+      },
+      "district": {
+        "get_list": "/v1/masterdata/internal/district/list",
+        "view": "/v1/masterdata/internal/district"
+      },
+      "position": {
+        "get_list": "/v1/masterdata/internal/position/list",
+        "view": "/v1/masterdata/internal/position"
+      },
+      "company_title": {
+        "get_list": "/v1/masterdata/internal/companytitle/list",
+        "view": "/v1/masterdata/internal/companytitle"
+      },
+      "company_profile": {
+        "get_list": "/v1/masterdata/internal/companyprofile/list",
+        "view": "/v1/masterdata/internal/companyprofile",
+        "validate": "/v1/masterdata/internal/companyprofile/validate"
+      },
+      "person_profile": {
+        "get_list": "/v1/masterdata/internal/personprofile/list",
+        "view": "/v1/masterdata/internal/personprofile",
+        "validate": "/v1/masterdata/internal/personprofile/validate"
+      },
+      "contact_person": {
+        "get_list": "/v1/masterdata/internal/contactperson/list",
+        "base_url": "/v1/masterdata/internal/contactperson",
+        "validate": "/v1/masterdata/internal/contactperson/validate"
+      },
+      "sub_district": {
+        "get_list": "/v1/masterdata/internal/subdistrict/list",
+        "count": "/v1/masterdata/internal/subdistrict/count",
+        "view": "/v1/masterdata/internal/subdistrict"
+      },
+      "urban_village": {
+        "get_list": "/v1/masterdata/internal/urbanvillage/list",
+        "count": "/v1/masterdata/internal/urbanvillage/count",
+        "view": "/v1/masterdata/internal/urbanvillage"
+      },
+      "postal_code": {
+        "get_list": "/v1/masterdata/internal/postalcode/list",
+        "count": "/v1/masterdata/internal/postalcode/count",
+        "view": "/v1/masterdata/internal/postalcode"
+      },
+      "country": {
+        "get_list": "/v1/masterdata/internal/country/list",
+        "count": "/v1/masterdata/internal/country/count"
+      }
+    }
+  },
+  "generator": {
+    "root_path": "/home/apptrac/go/nextrac/data",
+    "path": ""
+  },
+  "email": {
+    "address": "nextrac.admdeveloper@gmail.com",
+    "password": "akctwwnviqrculxa",
+    "host": "smtp.gmail.com",
+    "port": 587
+  },
+  "redmine": {
+    "address": "user=write password=555@Lima dbname=newredmine sslmode=disable host=10.10.10.160 port=5432",
+    "default_schema": "public",
+    "max_open_connection": 500,
+    "max_idle_connection": 100,
+    "api_access_key" : "f4ddecdaba8ac2cd4f5903b65dc2d552394061a1",
+    "api": {
+      "host": "https://redmine.nexcloud.id",
+      "path_redirect": {
+        "update_paid": "/issues"
+      }
+    }
+  },
+  "redmine_infra": {
+    "host": "10.10.11.33",
+    "port": "3306",
+    "username": "nextrac",
+    "password": "Nextrac@7",
+    "database": "redmine",
+    "api_access_key" : "1213asasasasa9a"
+  },
+  "discord_log": {
+    "token": "Bot MTE1MjEzNTM2OTY0MzU0MDUxMQ.Gh3jIo.JWXad8szTcWik2xZb5f14KZwMy8eDXQTEO4Rg4",
+    "channel_id": "1158610389643305020"
+  }
+}

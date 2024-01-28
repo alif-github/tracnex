@@ -1,0 +1,8 @@
+{
+  "SUCCESS_GET_LIST_CLIENT_TYPE_MESSAGE": "Successfully get list data application",
+  "SUCCESS_INITIATE_GET_LIST_CLIENT_TYPE_MESSAGE": "Successfully initiate get list data application",
+  "SUCCESS_INSERT_CLIENT_TYPE_MESSAGE": "Application added successfully",
+  "SUCCESS_UPDATE_CLIENT_TYPE_MESSAGE": "Application modified successfully",
+  "SUCCESS_VIEW_CLIENT_TYPE_MESSAGE": "Successfully get detail data application",
+  "SUCCESS_DELETE_CLIENT_TYPE_MESSAGE": "Application was successfully removed"
+}

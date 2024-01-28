@@ -1,0 +1,12 @@
+{
+  "SUCCESS_IMPORT_MESSAGE": "Sukses import file",
+  "FAILED_UNKNOWN_EXTENSION_MESSAGE": "ekstensi file tidak diketahui",
+  "FAILED_FILE_REQUIRE_MESSAGE": "format file harus text atau csv",
+  "FAILED_CORRUPT_MESSAGE": "corrupt: ukuran file hanya 0 kb",
+  "FAILED_UNKNOWN_TITLE_MESSAGE": "dokumen tidak diketahui",
+  "FAILED_DATA_PROCESS_MESSAGE": "gagal process data",
+  "SUCCESS_INITIATE_MESSAGE": "Sukses inisialisasi data import",
+  "SUCCESS_IMPORT_VALIDATE_MESSAGE": "Sukses validasi dan import file",
+  "FAILED_IMPORT_VALIDATE_MESSAGE": "Cek kembali data anda, ditemukan beberapa error",
+  "SUCCESS_CONFIRM_MESSAGE": "Sukses proses import data"
+}

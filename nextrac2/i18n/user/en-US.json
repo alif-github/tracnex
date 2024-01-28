@@ -1,0 +1,14 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Data user successfully inserted",
+  "SUCCESS_UPDATE_MESSAGE": "Data user successfully updated",
+  "SUCCESS_DELETE_MESSAGE": "Data user successfully deleted",
+  "SUCCESS_LIST_MESSAGE": "Successfully get list of user",
+  "SUCCESS_VIEW_MESSAGE": "Successfully get user",
+  "SUCCESS_INITIATE_LIST_MESSAGE": "Successfully get initiate list user",
+  "FAILED_COMPARING_MESSAGE_CHANGE_PASSWORD": "New password and verify password is different",
+  "SUCCESS_CHANGE_PASSWORD_MESSAGE": "Success change password",
+  "SUCCESS_USER_ALREADY_REGISTERED_AUTH": "Email and Phone already registered in Auth. You can use this data",
+  "SUCCESS_USER_NOT_FOUND_AUTH": "Both Email and Phone not registered yet. You can use this data",
+  "SUCCESS_CHECK_USERNAME_AUTH" : "Username can be used",
+  "SUCCESS_RESEND_VERIFICATION_CODE_MESSAGE" : "Successfully sent verification code"
+}

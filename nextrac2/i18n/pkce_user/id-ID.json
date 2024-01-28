@@ -1,0 +1,13 @@
+{
+  "SUCCESS_PKCE_REGIS_MESSAGE": "Registrasi berhasil, silahkan cek email {{.EMAIL}} untuk aktivasi",
+  "DETAIL_ERROR_INVALID_ID_MESSAGE": "Company atau branch ID tidak valid",
+  "DETAIL_ERROR_INVALID_CLIENTTYPE_MESSAGE": "Tipe client tidak sesuai",
+  "DETAIL_ERROR_INVALID_USERNAME_MESSAGE": "Username telah digunakan",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXTRAC_MESSAGE": "Penambahan hak akses untuk Nextrac tidak berhasil",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXCLOUD_MESSAGE": "Penambahan hak akses untuk NexCloud API v2 tidak berhasil",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXDRIVE_MESSAGE": "Penambahan hak akses untuk Nexdrive tidak berhasil",
+  "SUCCESS_PKCE_UNREGIS_MESSAGE": "Pembatalan pendaftaran user sukses",
+  "DETAIL_NOT_FOUND_USERNAME_MESSAGE": "Username tidak ditemukan",
+  "SUCCESS_VIEW_CUSTOM_PKCE_UNREGIS_MESSAGE": "Menampilkan user sukses",
+  "SUCCESS_CHANGE_PASSWORD_MESSAGE": "Perubahan password sukses"
+}

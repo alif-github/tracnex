@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_LICENSE_VARIANT_MESSAGE": "Data varian lisensi berhasil ditambahkan",
+  "SUCCESS_GET_LIST_LICENSE_VARIANT_MESSAGE": "Sukses mendapatkan list data varian lisensi",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_VARIANT_MESSAGE": "Sukses mendapatkan inisialisasi data varian lisensi",
+  "SUCCESS_UPDATE_LICENSE_VARIANT_MESSAGE": "Sukses mengubah data varian lisensi",
+  "SUCCESS_VIEW_LICENSE_VARIANT_MESSAGE": "Sukses mendapatkan detail data varian lisensi",
+  "SUCCESS_DELETE_LICENSE_VARIANT_MESSAGE": "Sukses menghapus data varian lisensi"
+}

@@ -1,0 +1,10 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Branch registration success",
+  "SUCCESS_GET_LIST_MESSAGE" : "All pkce client mapping data has been successfully obtained",
+  "INITIATE_GET_LIST_PKCE_CLIENT_MAPPING_MESSAGE" : "Initiate get list PKCE Client Mapping success",
+  "SUCCESS_UPDATE_MESSAGE": "Successful updated user pkce",
+  "SUCCESS_UPDATE_SOCKET_ID_ND6_MESSAGE" : "",
+  "DETAIL_ERROR_DATA_HAS_BEEN_REGISTERED": "Company and branch has been registered",
+  "DETAIL_INVALID_BRANCH_COMPANY_MESSAGE": "Invalid company or branch ID",
+  "SUCCESS_VIEW_PKCE_CLIENT_MAPPING_MESSAGE" : "Detailed pkce client mapping data has been obtained"
+}

@@ -1,0 +1,7 @@
+{
+  "SUCCESS_ADD_RESOURCE_NEXCLOUD_MESSAGE": "Success adding resource for Nexcloud API v2",
+  "SUCCESS_ADD_RESOURCE_NEXDRIVE_MESSAGE": "Success adding resource for NexDrive",
+  "INVALID_CLIENT_CREDENTIAL_ERROR": "Invalid client credential",
+  "FAILED_ADD_RESOURCE_EXISTING": "Resource has been listed",
+  "SUCCESS_VIEW_LOG_MESSAGE": "Success view registration log"
+}

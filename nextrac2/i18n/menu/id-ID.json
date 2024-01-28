@@ -1,0 +1,8 @@
+{
+  "SUCCESS_GET_ITEM_MESSAGE": "Pengambilan daftar item menu berhasil dilakukan",
+  "SUCCESS_GET_SERVICE_MESSAGE": "Pengambilan daftar menu service berhasil dilakukan",
+  "SUCCESS_GET_PARENT_MESSAGE": "Pengambilan daftar menu parent berhasil dilakukan",
+  "SUCCESS_UPDATE_PARENT_MESSAGE": "Perubahan data menu parent berhasil dilakukan",
+  "SUCCESS_UPDATE_SERVICE_MESSAGE": "Perubahan data menu service berhasil dilakukan",
+  "SUCCESS_UPDATE_ITEM_MESSAGE": "Perubahan data menu item berhasil dilakukan"
+}

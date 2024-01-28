@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Success added new customer",
+  "SUCCESS_GET_LIST_CUSTOMER_MESSAGE": "Successfully get list of customer",
+  "SUCCESS_VIEW_CUSTOMER_MESSAGE": "Successfully get detail of customer",
+  "FAILED_INSERT_CUSTOMER_MESSAGE": "Data failed to insert in database",
+  "COUNT_IS_NOT_ZERO_MESSAGE": "Sequence failed reset",
+  "SUCCESS_INITIATE_GET_LIST_CUSTOMER_MESSAGE": "Successfully get initiate data customer"
+}

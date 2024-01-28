@@ -1,0 +1,58 @@
+definitions:
+  services:
+    docker:
+      memory: 3072
+
+pipelines:
+  branches:
+
+    development:
+      - step:
+          name: Build Image Development
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - docker login docker.nexcloud.id -u nexsoft -p Empat@444
+            - docker build -t docker.nexcloud.id/dev-trac:latest --build-arg="NEXCOMMON_BRANCH=release/staging" .
+            - docker push docker.nexcloud.id/dev-trac:latest
+
+    staging:
+      - step:
+          name: Build Image Staging
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - docker login docker.nexcloud.id -u nexsoft -p Empat@444
+            - docker build -t docker.nexcloud.id/staging-trac:latest --build-arg="NEXCOMMON_BRANCH=release/staging" .
+            - docker push docker.nexcloud.id/staging-trac:latest
+
+    sandbox:
+      - step:
+          name: Build Image Sandbox
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - docker login docker.nexcloud.id -u nexsoft -p Empat@444
+            - docker build -t docker.nexcloud.id/sandbox-trac:latest --build-arg="NEXCOMMON_BRANCH=release/staging" .
+            - docker push docker.nexcloud.id/sandbox-trac:latest
+
+    master:
+      - step:
+          name: Build Image Production
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - export IMAGE=$DOCKER_REGISTRY/nextrac
+            - docker login docker.nexcloud.id -u nexsoft -p Empat@444
+            - docker build -t $IMAGE --build-arg="NEXCOMMON_BRANCH=master" .
+            - docker tag $IMAGE $IMAGE:${BITBUCKET_COMMIT::7}
+            - docker login $DOCKER_REGISTRY -u $DOCKER_USER -p $DOCKER_PASSWORD
+            - docker push --all-tags $IMAGE

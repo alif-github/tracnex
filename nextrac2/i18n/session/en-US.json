@@ -1,0 +1,10 @@
+{
+  "AUTHORIZE_MESSAGE": "Successfully Authorized",
+  "LOGOUT_MESSAGE": "Logout Success",
+  "VERIFY_MESSAGE": "Verify Success",
+  "TOKEN_MESSAGE": "Get Token Success",
+  "REFRESH_MESSAGE": "Refreshing token Success",
+  "GET_SESSION_MESSAGE": "Get User Session Success",
+  "GET_CURRENT_DATETIME_MESSAGE": "Get Current Datetime Success",
+  "GET_VERSION_MESSAGE": "Get application version Success"
+}

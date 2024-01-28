@@ -1,0 +1,10 @@
+{
+  "SUCCESS_INSERT_LICENSE_CONFIG": "Data konfigurasi lisensi berhasil ditambahkan",
+  "SUCCESS_GET_LIST_LICENSE_CONFIG_MESSAGE": "Sukses mendapatkan list data konfigurasi lisensi",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_CONFIG_MESSAGE": "Sukses mendapatkan inisialisasi data konfigurasi lisensi",
+  "SUCCESS_UPDATE_LICENSE_CONFIG_MESSAGE": "Sukses mengaktifasi konfigurasi lisensi",
+  "SUCCESS_VIEW_LICENSE_CONFIG_MESSAGE": "Sukses mendapatkan detail data konfigurasi lisensi",
+  "SUCCESS_DELETE_LICENSE_CONFIG_MESSAGE": "Sukses menghapus data konfigurasi lisensi",
+  "SUCCESS_INITIATE_GET_LIST_LICENSE_JOURNAL_MESSAGE": "Sukses mendapatkan inisialisasi data journal lisensi",
+  "SUCCESS_GET_LIST_LICENSE_JOURNAL_MESSAGE": "Sukses mendapatkan list data journal lisensi"
+}

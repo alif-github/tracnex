@@ -1,0 +1,6 @@
+{
+  "SUCCESS_GET_LIST_PRODUCT_LICENSE_MESSAGE": "Successfully get list data product license",
+  "SUCCESS_INITIATE_GET_LIST_PRODUCT_LICENSE_MESSAGE": "Successfully get initiate data product license",
+  "SUCCESS_VIEW_PRODUCT_LICENSE_MESSAGE": "Successfully get detail product license",
+  "SUCCESS_UPDATE_PRODUCT_LICENSE_MESSAGE": "Successfully update product license"
+}

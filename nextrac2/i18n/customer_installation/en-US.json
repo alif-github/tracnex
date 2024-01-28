@@ -1,0 +1,5 @@
+{
+  "SUCCESS_INSERT_CUSTOMER_INSTALLATION_MESSAGE": "Success adding new customer installation",
+  "SUCCESS_VIEW_CUSTOMER_INSTALLATION_MESSAGE": "Success get detail customer installation",
+  "SUCCESS_UPDATE_CUSTOMER_INSTALLATION_MESSAGE": "Success update customer installation"
+}

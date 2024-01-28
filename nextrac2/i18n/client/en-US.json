@@ -1,0 +1,13 @@
+{
+  "SUCCESS_REGIST_MESSAGE": "Successful client id registration",
+  "SUCCESS_INITIATE_LIST_MESSAGE": "Successfully get initiate list client type",
+  "DETAIL_INVALID_CLIENTTYPE_ND6_MESSAGE": "Client type does not match",
+  "DETAIL_ERROR_DATA_HAS_BEEN_REGISTERED": "Company and Branch has been registered",
+  "DETAIL_INVALID_BRANCH_COMPANY_MESSAGE": "Invalid company or branch ID",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXTRAC_MESSAGE": "Failed adding access resource Nextrac",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXCLOUD_MESSAGE": "Failed adding access resource NexCloud API v2",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXDRIVE_MESSAGE": "Failed adding access resource Nexdrive",
+  "DETAIL_ERROR_FAILED_RESOURCE_MESSAGE": "Failed adding access resource NexCloud API v2 and NexDrive",
+  "DETAIL_BRANCH_COMPANY_NOT_FOUND_MESSAGE": "Check your company or branch ID",
+  "AMOUNT_VALID_DATA_MESSAGE": "Amount data found : "
+}

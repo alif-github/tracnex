@@ -1,0 +1,11 @@
+{
+  "SUCCESS_CHECK_LICENSE_NAMED_USER_MESSAGE": "Data Ditemukan",
+  "SUCCESS_INSERT_USER_REGISTRATION_DETAIL": "Data pengguna berhasil di aktifkan",
+  "SUCCESS_UNREGISTER_LICENSE_MESSAGE": "Data berhasil diperbaharui",
+  "SUCCESS_INSERT_USER_REGISTRATION_DETAIL_CLIENT_MAPPING": "Data pengguna berhasil ter registrasi",
+  "SUCCESS_FOUND_DATA_BY_EMAIL_PHONE_MESSAGE": "Kombinasi Phone dan Email telah terdaftar",
+  "SUCCESS_FOUND_DATA_BY_EMAIL_MESSAGE": "Email telah terdaftar di Auth",
+  "SUCCESS_FOUND_DATA_BY_PHONE_MESSAGE": "Phone telah terdaftar di Auth",
+  "SUCCESS_NOT_FOUND_DATA_MESSAGE": "Kombinasi Phone dan Email belum terdaftar",
+  "FAILED_FOUND_DIFFERENT_USER_MESSAGE": "Kombinasi Phone dan Email telah terdaftar sebagai 2 user yang berbeda"
+}

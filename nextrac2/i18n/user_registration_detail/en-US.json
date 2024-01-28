@@ -1,0 +1,11 @@
+{
+  "SUCCESS_CHECK_LICENSE_NAMED_USER_MESSAGE": "Data found",
+  "SUCCESS_INSERT_USER_REGISTRATION_DETAIL": "Data user has been activated",
+  "SUCCESS_UNREGISTER_LICENSE_MESSAGE": "Data updated successfully",
+  "SUCCESS_INSERT_USER_REGISTRATION_DETAIL_CLIENT_MAPPING": "Data user has been registered",
+  "SUCCESS_FOUND_DATA_BY_EMAIL_PHONE_MESSAGE": "Combination of Phone and Email has been registered",
+  "SUCCESS_FOUND_DATA_BY_EMAIL_MESSAGE": "Email has been registered in Auth",
+  "SUCCESS_FOUND_DATA_BY_PHONE_MESSAGE": "Phone has been registered in Auth",
+  "SUCCESS_NOT_FOUND_DATA_MESSAGE": "Combination of Phone and Email has not been registered",
+  "FAILED_FOUND_DIFFERENT_USER_MESSAGE": "Combination of Phone and Email has been registered as 2 different users"
+}

@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_DATA_GROUP_MESSAGE": "Success adding new data group",
+  "SUCCESS_DELETE_DATA_GROUP_MESSAGE": "Successfully delete one data group",
+  "SUCCESS_INITIATE_GET_LIST_DATA_GROUP_MESSAGE": "Successfully initiate data group",
+  "SUCCESS_GET_LIST_DATA_GROUP_MESSAGE": "Successfully get list of data group",
+  "SUCCESS_VIEW_DATA_GROUP_MESSAGE": "Successfully get detail of data group",
+  "SUCCESS_UPDATE_DATA_GROUP_MESSAGE": "Successfully update data group"
+}

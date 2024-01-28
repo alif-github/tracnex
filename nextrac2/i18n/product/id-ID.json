@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_PRODUCT_MESSAGE": "Data produk berhasil ditambahkan",
+  "SUCCESS_GET_LIST_PRODUCT_MESSAGE": "Sukses mendapatkan list data produk",
+  "SUCCESS_INITIATE_GET_LIST_PRODUCT_MESSAGE": "Sukses mendapatkan inisialisasi data produk",
+  "SUCCESS_DELETE_PRODUCT_MESSAGE": "Sukses menghapus produk",
+  "SUCCESS_VIEW_PRODUCT_MESSAGE": "Sukses mendapatkan detail produk",
+  "SUCCESS_UPDATE_PRODUCT_MESSAGE": "Sukses memperbaharui produk"
+}

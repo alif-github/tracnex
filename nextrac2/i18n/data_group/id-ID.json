@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_DATA_GROUP_MESSAGE": "Grup data baru berhasil ditambahkan",
+  "SUCCESS_DELETE_DATA_GROUP_MESSAGE" : "Penghapusan satu grup data berhasil dilakukan",
+  "SUCCESS_INITIATE_GET_LIST_DATA_GROUP_MESSAGE": "Inisialisasi grup data berhasil dilakukan",
+  "SUCCESS_GET_LIST_DATA_GROUP_MESSAGE": "Pengambilan daftar grup data berhasil dilakukan",
+  "SUCCESS_VIEW_DATA_GROUP_MESSAGE": "Pengambilan detail grup data berhasil dilakukan",
+  "SUCCESS_UPDATE_DATA_GROUP_MESSAGE": "Grup data berhasil di ubah"
+}

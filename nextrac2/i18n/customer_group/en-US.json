@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_CUSTOMER_GROUP_MESSAGE": "Success adding new customer group",
+  "SUCCESS_DELETE_CUSTOMER_GROUP_MESSAGE": "Successfully delete one customer group",
+  "SUCCESS_INITIATE_GET_LIST_CUSTOMER_GROUP_MESSAGE": "Successfully initiate customer group",
+  "SUCCESS_GET_LIST_CUSTOMER_GROUP_MESSAGE": "Successfully get list of customer group",
+  "SUCCESS_VIEW_CUSTOMER_GROUP_MESSAGE": "Successfully get detail of customer group",
+  "SUCCESS_UPDATE_CUSTOMER_GROUP_MESSAGE": "Successfully update customer group"
+}

@@ -1,0 +1,8 @@
+{
+  "SUCCESS_GET_LIST_CLIENT_TYPE_MESSAGE": "Sukses mendapatkan list data aplikasi",
+  "SUCCESS_INITIATE_GET_LIST_CLIENT_TYPE_MESSAGE": "Pengambilan inisiasi daftar aplikasi berhasil dilakukan",
+  "SUCCESS_INSERT_CLIENT_TYPE_MESSAGE": "Aplikasi berhasil ditambahkan",
+  "SUCCESS_UPDATE_CLIENT_TYPE_MESSAGE": "Aplikasi berhasil diubah",
+  "SUCCESS_VIEW_CLIENT_TYPE_MESSAGE": "Pengambilan detail aplikasi berhasil dilakukan",
+  "SUCCESS_DELETE_CLIENT_TYPE_MESSAGE": "Aplikasi berhasil dihapus"
+}

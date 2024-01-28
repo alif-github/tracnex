@@ -1,0 +1,14 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Data pengguna berhasil ditambahkan",
+  "SUCCESS_UPDATE_MESSAGE": "Data pengguna berhasil diubah",
+  "SUCCESS_DELETE_MESSAGE": "Data pengguna berhasil dihapus",
+  "SUCCESS_LIST_MESSAGE": "Pengambilan daftar pengguna berhasil dilakukan",
+  "SUCCESS_VIEW_MESSAGE": "Pengambilan data pengguna berhasil dilakukan",
+  "SUCCESS_INITIATE_LIST_MESSAGE": "Pengambilan data inisiasi daftar pengguna berhasil dilakukan",
+  "FAILED_COMPARING_MESSAGE_CHANGE_PASSWORD": "Password baru dan konfirmasi password berbeda",
+  "SUCCESS_CHANGE_PASSWORD_MESSAGE": "Perubahan password sukses",
+  "SUCCESS_USER_ALREADY_REGISTERED_AUTH": "Email dan Telepon sudah terdaftar di Auth. Anda dapat menggunakan data ini",
+  "SUCCESS_USER_NOT_FOUND_AUTH": "Email dan Telepon belum terdaftar. Anda dapat menggunakan data ini",
+  "SUCCESS_CHECK_USERNAME_AUTH": "Nama pengguna dapat digunakan",
+  "SUCCESS_RESEND_VERIFICATION_CODE_MESSAGE": "berhasil mengirimkan kode verifikasi"
+}

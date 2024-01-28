@@ -1,0 +1,16 @@
+-- +migrate Up
+-- +migrate StatementBegin
+
+insert into permission ("permission", description, created_by, created_client, updated_by, updated_client, deleted) values
+(''master.alert-engine:insert'', ''insert alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:view'', ''view all alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:view-own'', ''view own alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:update'', ''update all alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:update-own'', ''update own alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:delete'', ''delete all alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false),
+(''master.alert-engine:delete-own'', ''delete own alert engine'', 1, ''SYSTEM'', 1, ''SYSTEM'', false);
+
+insert into service_menu (parent_menu_id, "name", en_name, "sequence", icon_name, background, available_action, menu_code, status, created_by, created_client, updated_by, updated_client, deleted) values
+(2, ''Alert Engine'', ''Alert Engine'', 7, ''FactCheckOutlinedIcon'', ''#0068BE'', ''view, view-own, update, update-own, delete, delete-own, insert'', ''master.alert-engine'', ''A'', 1, ''SYSTEM'', 1, ''SYSTEM'', false);
+
+-- +migrate StatementEnd

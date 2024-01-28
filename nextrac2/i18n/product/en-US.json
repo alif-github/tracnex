@@ -1,0 +1,8 @@
+{
+  "SUCCESS_INSERT_PRODUCT_MESSAGE": "Successfully insert new data product",
+  "SUCCESS_GET_LIST_PRODUCT_MESSAGE": "Successfully get list data product",
+  "SUCCESS_INITIATE_GET_LIST_PRODUCT_MESSAGE": "Successfully get initiate data product",
+  "SUCCESS_DELETE_PRODUCT_MESSAGE": "Successfully deleting product",
+  "SUCCESS_VIEW_PRODUCT_MESSAGE": "Successfully get detail product",
+  "SUCCESS_UPDATE_PRODUCT_MESSAGE": "Successfully update product"
+}

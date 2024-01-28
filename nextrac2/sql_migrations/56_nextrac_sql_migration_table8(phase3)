@@ -1,0 +1,330 @@
+-- +migrate Up
+-- +migrate StatementBegin
+
+insert into permission ("permission", description, created_by, created_client, updated_by, updated_client, deleted) values
+('master.to-do-list:view-own', 'view own todolist', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.to-do-list:update-own', 'update own todolist', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.to-do-list:delete-own', 'delete own todolist', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.to-do-list:insert', 'insert todolist', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:insert', 'insert account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:view', 'view all account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:view-own', 'view own account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:update', 'update all account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:update-own', 'update own account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:delete', 'delete all account registration', 1, 'SYSTEM', 1, 'SYSTEM', false),
+('master.account-registration:delete-own', 'delete own account registration', 1, 'SYSTEM', 1, 'SYSTEM', false);
+
+insert into service_menu (parent_menu_id, "name", en_name, "sequence", icon_name, background, available_action, menu_code, status, created_by, created_client, updated_by, updated_client, deleted) values
+(2, 'To do List', 'To do List', 5, 'FactCheckOutlinedIcon', '#0068BE', 'view-own, update-own, delete-own, insert', 'master.to-do-list', 'A', 1, 'SYSTEM', 1, 'SYSTEM', false),
+(2, 'Account Registration', 'Account Registration', 6, 'TaskIcon', '#0068BE', 'view, view-own, update, update-own, delete, delete-own, insert', 'master.account-registration', 'A', 1, 'SYSTEM', 1, 'SYSTEM', false);
+
+CREATE SEQUENCE IF NOT EXISTS remark_pkey_seq;
+CREATE TABLE IF NOT EXISTS "remark"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('remark_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    "name"               		VARCHAR(256),
+    "level"                     INT,
+    "value"                     TEXT,
+    parent_id               	BIGINT,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_remark_id PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE IF NOT EXISTS list_pkey_seq;
+CREATE TABLE IF NOT EXISTS "list"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('list_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    "name"                      VARCHAR (256),
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_list_id PRIMARY KEY (id)
+);
+
+DROP TYPE IF EXISTS repeat_type_status;
+CREATE TYPE repeat_type_status AS ENUM ('D', 'W', 'M','Y', 'WD');
+
+CREATE SEQUENCE IF NOT EXISTS todo_list_pkey_seq;
+CREATE TABLE IF NOT EXISTS "todo_list"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('todo_list_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    list_id                     BIGINT,
+    customer_id                 BIGINT,
+    connector					VARCHAR(256),
+    task_name                   VARCHAR(100),
+    description                 TEXT,
+    due_date                    TIMESTAMP WITHOUT TIME ZONE,
+    repeat_type                 repeat_type_status,
+    repeat_every                BIGINT,
+    important                   BOOLEAN DEFAULT FALSE,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_todo_list_id PRIMARY KEY (id),
+    CONSTRAINT fk_todo_list_list FOREIGN KEY (list_id) REFERENCES list(id),
+    CONSTRAINT fk_todo_list_customer FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+CREATE SEQUENCE IF NOT EXISTS todo_list_detail_pkey_seq;
+CREATE TABLE IF NOT EXISTS "todo_list_detail"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('todo_list_detail_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    todo_list_id               	BIGINT,
+    email                     	VARCHAR(100),
+    reminder_type 				BIGINT,
+    reminder_time               TIMESTAMP WITHOUT TIME ZONE,
+    is_complete                 BOOLEAN DEFAULT FALSE,
+    snooze_time                 TIMESTAMP WITHOUT TIME ZONE,
+    due_date                    TIMESTAMP WITHOUT TIME ZONE,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_todo_list_detail_id PRIMARY KEY (id),
+    CONSTRAINT fk_todo_list_detail_todo_list FOREIGN KEY (todo_list_id) REFERENCES todo_list(id)
+);
+
+CREATE SEQUENCE IF NOT EXISTS file_upload_pkey_seq;
+CREATE TABLE IF NOT EXISTS "file_upload"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('file_upload_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    file_name                   VARCHAR(256),
+    category                    VARCHAR(25),
+    connector                   VARCHAR(100),
+    parent_id                   BIGINT,
+    host                        VARCHAR(256),
+    "path"                      VARCHAR(256),
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_file_upload_id PRIMARY KEY (id)
+);
+
+DROP TYPE IF EXISTS notification_setting;
+CREATE TYPE notification_setting AS ENUM ('fix', 'custom');
+
+CREATE SEQUENCE IF NOT EXISTS alert_pkey_seq;
+CREATE TABLE IF NOT EXISTS alert
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('alert_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    category_id               	BIGINT,
+    notification_type           notification_setting,
+    no_of_notification          INT,
+    connector					VARCHAR(100),
+    validation                  TEXT,
+    total_days_to_complete      INT,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_alert_id PRIMARY KEY (id),
+    CONSTRAINT fk_alert_remark FOREIGN KEY (category_id) REFERENCES remark(id)
+);
+
+CREATE SEQUENCE IF NOT EXISTS account_registration_pkey_seq;
+CREATE TABLE IF NOT EXISTS "account_registration"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('account_registration_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    company_title_id            BIGINT,
+    company_title               VARCHAR(25),
+    customer_name               VARCHAR(50) NOT NULL,
+    address                     VARCHAR(255),
+    postal_code_id              BIGINT,
+    district_id                 BIGINT,
+    sub_district_id             BIGINT,
+    urban_village_id            BIGINT,
+    province_id                 BIGINT,
+    phone                       VARCHAR(35) NOT NULL,
+    fax                         VARCHAR(35),
+    company_email               VARCHAR(100),
+    contact_first_name          VARCHAR(50) NOT NULL,
+    contact_last_name           VARCHAR(50),
+    position_id                 BIGINT,
+    position_name               VARCHAR(100),
+    contact_phone               VARCHAR(35),
+    bank_id                     BIGINT,
+    account_name                VARCHAR(256),
+    account_no                  VARCHAR(256),
+    tax_name                    VARCHAR(100),
+    npwp                        VARCHAR(30),
+    tax_address                 VARCHAR(255),
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_account_registration_id PRIMARY KEY (id),
+    CONSTRAINT fk_account_registration_remark FOREIGN KEY (bank_id) REFERENCES remark(id)
+);
+
+insert into remark (id, name, level, value, parent_id, created_by, created_client, updated_by, updated_client) values
+(1, 'Remind Me', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(2, 'Send reminder to other', 2, null, 1, 1, 'SYSTEM', 1, 'SYSTEM'),
+(3, 'Do not send reminder to other', 2, null, 1, 1, 'SYSTEM', 1, 'SYSTEM'),
+(4, 'Reminder Type', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(5, '0 Minutes Before', 2, '0', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(6, '5 Minutes Before', 2, '-5', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(7, '15 Minutes Before', 2, '-15', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(8, '30 Minutes Before', 2, '-30', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(9, '1 Hour Before', 2, '-60', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(10, '2 Hours Before', 2, '-120', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(11, '12 Hours Before', 2, '-720', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(12, '1 Day Before', 2, '-1440', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(13, '2 Days Before', 2, '-2880', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(14, '1 Week Before', 2, '-10080', 4, 1, 'SYSTEM', 1, 'SYSTEM'),
+(15, 'Repeat Type', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(16, 'Daily', 2, 'D', 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(17, 'Weekdays', 2, 'WD', 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(18, 'Weekly', 2, 'W', 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(19, 'Monthly', 2, 'M', 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(20, 'Yearly', 2, 'Y', 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(21, 'Custom', 2, null, 15, 1, 'SYSTEM', 1, 'SYSTEM'),
+(22, 'Category Alert Engine', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(23, 'Account Registration Completion', 2, 'account_registration', 22, 1, 'SYSTEM', 1, 'SYSTEM'),
+(24, 'Account Registration Document Checklist', 2, 'account_registration', 22, 1, 'SYSTEM', 1, 'SYSTEM'),
+(25, 'Quotation Document Checklist', 2, null, 22, 1, 'SYSTEM', 1, 'SYSTEM'),
+(26, 'Reminder Alert Engine', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(27, '7 Days After', 2, '7', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(28, '9 Days After', 2, '9', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(29, '11 Days After', 2, '11', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(30, '13 Days After', 2, '13', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(31, '14 Days After', 2, '14', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(32, '15 Days After', 2, '15', 26, 1, 'SYSTEM', 1, 'SYSTEM'),
+(33, 'Channel Notification', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(34, 'Email', 2, null, 33, 1, 'SYSTEM', 1, 'SYSTEM'),
+(35, 'Send Notification', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(36, 'Sales', 2, null, 35, 1, 'SYSTEM', 1, 'SYSTEM'),
+(37, 'Customer Contact', 2, null, 35, 1, 'SYSTEM', 1, 'SYSTEM'),
+(38, 'Sales dan Customer Contact', 2, null, 35, 1, 'SYSTEM', 1, 'SYSTEM'),
+(39, 'Validation Account Registration Completion', 3, null, 23, 1, 'SYSTEM', 1, 'SYSTEM'),
+(40, 'Validation Account Registration Document Checklist', 3, null, 24, 1, 'SYSTEM', 1, 'SYSTEM'),
+(41, 'Validation Quotation Document Checklist', 3, null, 25, 1, 'SYSTEM', 1, 'SYSTEM'),
+(42, 'Company Title', 4, 'company_title_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(43, 'Address', 4, 'address:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(44, 'Province', 4, 'province_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(45, 'District', 4, 'district_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(46, 'Sub District', 4, 'sub_district_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(47, 'Urban Village', 4, 'urban_village_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(48, 'Postal Code', 4, 'postal_code_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(49, 'Company Fax', 4, 'fax:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(50, 'Company Email', 4, 'company_email:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(51, 'Contact Phone', 4, 'contact_phone:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(52, 'Position', 4, 'position_id:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(53, 'Company Name in NPWP', 4, 'tax_name:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(54, 'NPWP', 4, 'npwp:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(55, 'Address in NPWP', 4, 'tax_address:mandatory,optional', 39, 1, 'SYSTEM', 1, 'SYSTEM'),
+(56, 'File NPWP', 4, 'file_npwp:mandatory,optional', 40, 1, 'SYSTEM', 1, 'SYSTEM'),
+(57, 'File SPPKP', 4, 'file_sppkp:mandatory,optional', 40, 1, 'SYSTEM', 1, 'SYSTEM'),
+(58, 'Bank Name', 1, null, null, 1, 'SYSTEM', 1, 'SYSTEM'),
+(59, 'BCA', 2, null, 58, 1, 'SYSTEM', 1, 'SYSTEM');
+
+ALTER TABLE customer ADD COLUMN account_registration_id BIGINT;
+
+CREATE SEQUENCE IF NOT EXISTS alert_component_pkey_seq;
+CREATE TABLE IF NOT EXISTS "alert_component"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('alert_component_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    alert_id                    BIGINT,
+    reminder_alert_id           BIGINT,
+    channel_id                  BIGINT,
+    send_notification_id        BIGINT,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_alert_component_id PRIMARY KEY (id),
+    CONSTRAINT fk_alertcomponent_alert FOREIGN KEY (alert_id) REFERENCES alert(id),
+    CONSTRAINT fk_alertcomponent_remark_reminderalert FOREIGN KEY (reminder_alert_id) REFERENCES remark(id),
+    CONSTRAINT fk_alertcomponent_remark_channel FOREIGN KEY (channel_id) REFERENCES remark(id),
+    CONSTRAINT fk_alertcomponent_remark_sendnotification FOREIGN KEY (send_notification_id) REFERENCES remark(id)
+);
+
+DROP TYPE IF EXISTS history_alert_status;
+CREATE TYPE history_alert_status AS ENUM ('A', 'I', 'C');
+
+CREATE SEQUENCE IF NOT EXISTS history_alert_pkey_seq;
+CREATE TABLE IF NOT EXISTS "history_alert"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('history_alert_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    alert_id                    BIGINT,
+    parent_id                   BIGINT,
+    notification_date           TIMESTAMP WITHOUT TIME ZONE,
+    snooze_time                 TIMESTAMP WITHOUT TIME ZONE,
+    status                      history_alert_status,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_history_alert_id PRIMARY KEY (id)
+);
+
+CREATE SEQUENCE IF NOT EXISTS alert_mapping_pkey_seq;
+CREATE TABLE IF NOT EXISTS "alert_mapping"
+(
+    id                          BIGINT NOT NULL DEFAULT nextval('alert_mapping_pkey_seq'::regclass),
+    uuid_key                    uuid DEFAULT public.uuid_generate_v4(),
+    parent_id                   BIGINT,
+    alert_id         			BIGINT,
+    status						BOOLEAN DEFAULT FALSE,
+    created_client              VARCHAR(256),
+    updated_client              VARCHAR(256),
+    created_by                  BIGINT,
+    created_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_by                  BIGINT,
+    updated_at                  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted                     BOOLEAN DEFAULT FALSE,
+
+    CONSTRAINT pk_alert_mapping_id PRIMARY KEY (id)
+);
+
+-- +migrate StatementEnd

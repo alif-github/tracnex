@@ -1,0 +1,8 @@
+{
+  "SUCCESS_ROLE_MESSAGE": "Nexsoft Role baru berhasil ditambahkan",
+  "SUCCESS_DELETE_ROLE_MESSAGE" : "Penghapusan satu nexsoft role berhasil dilakukan",
+  "SUCCESS_INITIATE_GET_LIST_ROLE_MESSAGE": "Inisialisasi nexsoft role berhasil dilakukan",
+  "SUCCESS_GET_LIST_PERSON_TITLE_MESSAGE": "Pengambilan daftar person title berhasil dilakukan",
+  "SUCCESS_VIEW_ROLE_MESSAGE": "Pengambilan detail nexsoft role berhasil dilakukan",
+  "SUCCESS_UPDATE_ROLE_MESSAGE": "Nexsoft Role berhasil di ubah"
+}

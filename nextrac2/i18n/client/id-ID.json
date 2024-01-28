@@ -1,0 +1,13 @@
+{
+  "SUCCESS_REGIST_MESSAGE": "Pendaftaran client id sukses",
+  "SUCCESS_INITIATE_LIST_MESSAGE": "Pengambilan data inisiasi daftar klien berhasil dilakukan",
+  "DETAIL_INVALID_CLIENTTYPE_ND6_MESSAGE": "Tipe client tidak sesuai",
+  "DETAIL_ERROR_DATA_HAS_BEEN_REGISTERED": "Company dan Branch sudah teregistrasi",
+  "DETAIL_INVALID_BRANCH_COMPANY_MESSAGE": "Company atau branch ID tidak valid",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXTRAC_MESSAGE": "Penambahan hak akses untuk Nextrac tidak berhasil",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXCLOUD_MESSAGE": "Penambahan hak akses untuk NexCloud API v2 tidak berhasil",
+  "DETAIL_ERROR_FAILED_RESOURCE_NEXDRIVE_MESSAGE": "Penambahan hak akses untuk Nexdrive tidak berhasil",
+  "DETAIL_ERROR_FAILED_RESOURCE_MESSAGE": "Penambahan hak akses untuk NexCloud API v2 dan NexDrive tidak berhasil",
+  "DETAIL_BRANCH_COMPANY_NOT_FOUND_MESSAGE": " , Cek data company atau branch ID anda",
+  "AMOUNT_VALID_DATA_MESSAGE": "Jumlah data yang ditemukan : "
+}

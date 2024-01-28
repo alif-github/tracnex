@@ -1,0 +1,10 @@
+{
+  "SUCCESS_INSERT_MESSAGE": "Pendaftaran branch sukses",
+  "SUCCESS_GET_LIST_MESSAGE" : "Seluruh data pkce client mapping berhasil didapatkan",
+  "INITIATE_GET_LIST_PKCE_CLIENT_MAPPING_MESSAGE" : "Pengambilan data inisiasi daftar PKCE Client Mapping berhasil dilakukan",
+  "SUCCESS_UPDATE_MESSAGE": "Sukses memperbarui user pkce",
+  "SUCCESS_UPDATE_SOCKET_ID_ND6_MESSAGE": "ND6 User Socket ID change was successful",
+  "DETAIL_ERROR_DATA_HAS_BEEN_REGISTERED": "Company dan branch sudah terdaftar",
+  "DETAIL_INVALID_BRANCH_COMPANY_MESSAGE": "Company atau branch ID tidak valid",
+  "SUCCESS_VIEW_PKCE_CLIENT_MAPPING_MESSAGE" : "Detail data pkce client mapping berhasil didapatkan"
+}
